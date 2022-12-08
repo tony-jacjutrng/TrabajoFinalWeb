@@ -1,0 +1,41 @@
+﻿@model TrabajoFinalWeb.Models.TipoEmpleado
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout_Administrador.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>¿Estas seguro de eliminarlo?</h3>
+<div>
+    <h4>Tipo de empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sueldo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
